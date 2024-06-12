@@ -3,6 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { Box, Typography, styled } from '@mui/material';
 import Search from './Search';
+import CustomButtons from './CustomButtons';
 
 const StyledHeader = styled(AppBar)`
     background: #2874f0;
@@ -25,13 +26,17 @@ const PlusImage = styled('img')({
     marginTop:2,
 })
 
+const CustomButtonWrapper = styled(Box)`
+    margin: 0 5% 0 auto;
+`
+
 const Header = () => {
     const logoURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/flipkart-plus_8d85f4.png';
     const subURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png';
 
   return (
    <StyledHeader>
-    <Toolbar>
+    <Toolbar style={{minHeight: '55px'}}>
         <Component>
         <img src={logoURL} alt='logo' style={{ width: 75 }}/>
         <Box style={{display: 'flex'}}>
@@ -44,6 +49,10 @@ const Header = () => {
         </Box>
         </Component>
         <Search/>
+        <CustomButtonWrapper>
+            <CustomButtons/>
+        </CustomButtonWrapper>
+        
     </Toolbar>
    </StyledHeader>
   )
